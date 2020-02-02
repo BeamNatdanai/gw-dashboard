@@ -1,0 +1,585 @@
+
+
+/* General */
+
+    hr {
+        margin: 0;
+        border-top: 0.8px solid #010b13;
+        box-shadow: 2px 1px 3px #010b13;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .space-20 {height: 20px;}
+    .space-30 {height: 30px;}
+    .space-40 {height: 40px;}
+    .space-50 {height: 50px;}
+
+    .margin-t-10 {
+        margin-top:10px;
+    }
+
+    .margin-t-20 {
+        margin-top:20px;
+    }
+
+    .pull-left {
+        float: left;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .gw-body-main {
+        background-color: #eaed86;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gw-body-dark {
+        background-color: #333333;
+        height: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .gw-body-red {
+        background-color: #ae1501;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .gw-container-big{
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gw-container-middle{
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* color */
+    .primary {color:#e2b13c;}
+    .danger {color:#b60c26;}
+    .default {color:#f5f5f5;}
+    .black {color:#010b13;}
+    .black-orgin {color: #000;}
+    .black-soft {color:#333333;}
+    .red {color:#ae1501;}
+    .white-gold {color:#eaed86;}
+    .dark-gold {color:#F4CD5F;}
+
+    .text-shadow-gold{
+        text-shadow: -1px 0 #F4CD5F, 0 1px #F4CD5F, 1px 0 #F4CD5F, 0 -1px #F4CD5F;
+    }
+
+    .text-shadow-white{
+        text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    }
+
+    .under-line-text {
+        /* display: block; */
+        /* border-bottom: 2px solid #ae1501; */
+        /* box-shadow: 0px 0 #F4CD5F, 0 0px #F4CD5F, 0px 0 #F4CD5F, 0 1px #F4CD5F; */
+        text-decoration: underline;
+        -webkit-text-underline-position: under;
+        -ms-text-underline-position: below;
+        text-underline-position: under; 
+    }
+
+    /* Text */
+    .gw-text-h0 {
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 40px;
+    }
+
+    .gw-text-h1 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 35px;
+    }
+
+    .gw-text-h2 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 30px;
+    }
+
+    .gw-text-h3 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 25px;
+    }
+
+    .gw-text-h4 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    .gw-text-h5 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 18px;
+    }
+
+    .gw-text-h6 {
+        margin: 0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 16px;
+    }
+
+    .gw-text-des-1 {
+        margin: 0;
+        font-family: "Noto Sans Thai";
+        font-weight: 900;
+        font-size: 24px;
+    }
+
+    .gw-text-des-2 {
+        margin: 0;
+        font-family: "Noto Sans Thai";
+        font-weight: 900;
+        font-size: 21px;
+    }
+
+    .gw-text-des-3 {
+        margin: 0;
+        font-family: "Noto Sans Thai";
+        font-weight: 900;
+        font-size: 18px;
+    }
+
+    .gw-text-title-1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 34px;
+        color:#010b13;
+        text-shadow: -1px 0 #F4CD5F, 0 3px #F4CD5F, 0px 0 #F4CD5F, 0 -1px #F4CD5F;
+    }
+
+    .gw-text-title-2 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 29px;
+        color:#010b13;
+        text-shadow: -1px 0 #F4CD5F, 0 3px #F4CD5F, 0px 0 #F4CD5F, 0 -1px #F4CD5F;
+    }
+
+    .gw-text-defualt {
+        text-shadow: 1px 1px 0px #010b13;
+    }
+
+/* End General */
+
+
+/* Component */
+
+    /* button */
+    .gw-btn-black {
+        margin:0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 18px;
+        border-radius: 18px;
+        height: 38px;
+        min-width: 110px;
+        max-width: 150px;
+        border: 2px solid #010b13;
+        color:#f5f5f5;
+        background: #010b13;
+    }
+
+    .gw-btn-black:hover {
+        text-shadow: 1px 0 #ae1501, 0 2px #ae1501, 2px 0 #ae1501, 0 1px #ae1501;
+        border: 2px solid #ae1501;
+    }
+
+    .gw-btn-main {
+        margin:0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 18px;
+        border-radius: 18px;
+        height: 38px;
+        min-width: 110px;
+        max-width: 150px;
+        color: #010b13;
+        border: 2px solid #F4CD5F;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-main:hover{
+        color: #ae1501;
+        border: 3px solid #ae1501;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-main-small {
+        margin:0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 14px;
+        border-radius: 18px;
+        height: 30px;
+        min-width: 80px;
+        max-width: 110px;
+        color: #010b13;
+        border: 2px solid #F4CD5F;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-main-small:hover{
+        color: #ae1501;
+        border: 3px solid #ae1501;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-lg-main {
+        margin:0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 19px;
+        border-radius: 18px;
+        height: 42px;
+        min-width: 150px;
+        max-width: 180px;
+        color: #010b13;
+        border: 2px solid #F4CD5F;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-lg-main:hover{
+        color: #ae1501;
+        border: 3px solid #ae1501;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-default {
+        margin:0;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 18px;
+        border-radius: 18px;
+        height: 38px;
+        min-width: 110px;
+        max-width: 150px;
+        color: #010b13;
+        border: 2px solid #F4CD5F;
+        background: #F4CD5F;
+    }
+
+    .gw-btn-default:hover{
+        color: #F4CD5F;
+        border: 3px solid #010b13;
+        background: #010b13;
+    }
+
+    .gw-btn-play {
+        margin: 2px;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 22px;
+        border-radius: 18px;
+        height: 38px;
+        min-width: 110px;
+        max-width: 150px;
+        color: #ae1501;
+        border: 3px solid #F4CD5F;
+        background: #F4CD5F;
+        text-shadow: 1px 1px 0px #010b13;
+    }
+
+    .gw-btn-play:hover{
+        color: #F4CD5F;
+        border: 3px solid #010b13;
+        background: #010b13;
+    }
+
+    .gw-btn-play-block {
+        margin: 2px;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 900;
+        font-size: 22px;
+        border-radius: 18px;
+        height: 38px;
+        min-width: 100%;
+        color: #ae1501;
+        border: 3px solid #F4CD5F;
+        background: #F4CD5F;
+        text-shadow: 1px 1px 0px #010b13;
+        box-shadow: 1px 5px 21px #333
+    }
+
+    .gw-btn-play-block:hover{
+        color: #F4CD5F;
+        border: 3px solid #010b13;
+        background: #010b13;
+    }
+
+    /* input */
+    .gw-input-middle {
+        font-family: "Noto Sans Thai";
+        font-weight: 900;
+        font-size: 18px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        padding: 4px 15px;
+        margin: 4px 0;
+        display: inline-block;
+    }
+
+    .gw-input-block {
+        font-family: "Noto Sans Thai";
+        font-weight: 900;
+        font-size: 14px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        padding: 4px 12px;
+        margin: 4px 0;
+        display: inline-block;
+    }
+
+    .gw-datepicker-start {
+        float: right;
+    }
+
+    .gw-datepicker-end {
+        /* float: right; */
+    }
+
+    .gw-btn-search {
+        /* float: left; */
+        padding: 5px;
+        margin: 2px;
+        width: 140px;
+        font-family:'Noto Sans Thai Bold';
+    }
+
+    /* card */
+    .gw-card-top {
+        position: relative;
+        width: 100%;
+        background: #ae1501;
+        padding: 15px 20px;
+        box-shadow: -4px 2px 11px #010b13;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    
+    .gw-card-bottom {
+        position: relative;
+        width: 100%;
+        background: #ae1501;
+        padding: 15px 20px;
+        box-shadow: -4px 2px 9px #010b13;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+/* End Component */
+
+
+
+/* Specifically */
+
+    /* header */
+    .gw-header {
+        z-index: 300;
+        position: fixed;
+        width: 100%;
+        height: 75px;
+        margin-top: 0px;
+        background: #ae1501;
+        box-shadow: 0px 0px 5px #eaed86;
+    }
+
+    .gw-logo-box {
+        padding-top: 5%;
+    }
+
+    .gw-logo-box-mobile {
+        padding-top: 4%;
+    }
+
+    .gw-logo {
+        position: relative;
+        margin: 0;
+        font-weight: 900;
+        font-size: 34px;
+        color:#010b13;
+        text-shadow: -1px 0 #F4CD5F, 0 3px #F4CD5F, 0px 0 #F4CD5F, 0 -1px #F4CD5F;
+    }
+
+    .menu-nav-zone {
+        position: relative;
+        margin: 0;
+        margin-top: 7%;
+    }
+
+    .menu-mobile-zone {
+        position: relative;
+        margin: 0;
+        margin-top: 34%;
+    }
+
+    .gw-content {
+        padding-top: 75px;
+    }
+
+    .menu-icon {
+        width: 40px; 
+        height: auto;
+        margin-right: 25px;
+    }
+
+    /* sidebar */
+    #main {
+        transition: margin-left .5s; /* If you want a transition effect */
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 300;
+        top: 75px;
+        left: 0;
+        background-color: #F4CD5F;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        box-shadow: 0px 6px 6px #F4CD5F;
+    }
+      
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        font-family: "Noto Sans Thai Bold";
+        font-weight: 200;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ae1501;
+        text-shadow: 1px 1px 0px #010b13;
+        display: block;
+        transition: 0.3s;
+    }
+      
+    .sidebar a:hover {
+        color: #ffa396;
+    }
+      
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: red;
+    }
+
+    /* Form */
+    .gw-form {
+        display: inline-block;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        width: 40%;
+        border-radius: 10px;
+        background: #010b13;
+        padding: 30px 40px;
+    }
+
+    .myIframe {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 460px;
+    }
+
+/* End Specifically */
+
+
+/* external class */
+
+/* .ant-popover-title {
+    min-width: 177px;
+    min-height: 32px;
+    margin: 0;
+    padding: 5px 16px 4px;
+    color: #f5f5f5;
+    font-weight: 500;
+    border-bottom: 1px solid #e8e8e8;
+    background: #010b13;
+} */
+
+.ant-popover-title {
+    min-width: 177px;
+    min-height: 32px;
+    margin: 0;
+    padding: 5px 16px 4px;
+    color: #f5f5f5;
+    font-weight: 500;
+    border-bottom: 1px solid #F4CD5F;
+    background-color: #1a1a1a;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.ant-popover-inner-content {
+    padding: 12px 16px;
+    color: #1a1a1a;
+    background-color: #1a1a1a;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-bottomLeft > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-bottomRight > .ant-popover-content > .ant-popover-arrow {
+    top: 6px;
+    border-top-color: #1a1a1a;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #1a1a1a;
+    -webkit-box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.ant-table-gw-text {
+    font-family: "Noto Sans Thai Bold";
+    font-weight: 900;
+    font-size: 16px;
+    color: #000;
+    /* background-color: #1a1a1a; */
+}
+
