@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import { Layout, Menu, Icon } from 'antd';
+const { SubMenu } = Menu;
 const { Header, Sider, Content } = Layout;
 
 const MyLayout  = (props) => {
@@ -26,16 +27,30 @@ const MyLayout  = (props) => {
                 </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1">
-                    <Icon type="user" />
-                    <span>nav 1</span>
+                        <Icon type="setting" />
+                        <span>ตั้งค่าเกมส์</span>
                     </Menu.Item>
                     <Menu.Item key="2">
-                    <Icon type="video-camera" />
-                    <span>nav 2</span>
+                        <Icon type="desktop" />
+                        <span>จัดการห้องเล่น</span>
                     </Menu.Item>
+                    <SubMenu
+                        key="3"
+                        title={
+                            <span>
+                                <Icon type="file" />
+                                <span>รายงาน</span>
+                            </span>
+                        }
+                    >
+                        <Menu.Item key="1">
+                            <Icon type="caret-right" />
+                            <span> แพ้ - ชนะ </span>
+                        </Menu.Item>
+                    </SubMenu>
                     <Menu.Item key="3">
-                    <Icon type="upload" />
-                    <span>nav 3</span>
+                        <Icon type="poweroff" />
+                        <span>ออกจากระบบ</span>
                     </Menu.Item>
                 </Menu>
                 </Sider>

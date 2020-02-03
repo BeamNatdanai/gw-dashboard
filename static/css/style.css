@@ -4,6 +4,16 @@
     height: 100vh;
 }
 
+span {
+    font-family: "Noto Sans Thai";
+    font-weight: 900;
+}
+
+span span{
+    font-family: "Noto Sans Thai";
+    font-weight: 900;
+}
+
 /* General */
 
     hr {
