@@ -44,6 +44,11 @@ const Signin = (props) => {
                         </div>
                     </div>
                 </div>
+                <style global jsx>{`
+                    body {
+                        background-color: #011429;
+                    }
+                `}</style>
         </div>
     )
 }

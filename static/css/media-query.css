@@ -40,6 +40,9 @@
   
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
+  .gw-body-default {
+      height: 100%;
+  }
 
 }
   
@@ -50,6 +53,13 @@
   
 @media (min-width: 481px) and (max-width: 767px) {
 
+    .gw-form {
+        width: 96%;
+    }
+
+    .gw-body-default {
+        height: 100%;
+    }
 
 }
   
@@ -60,6 +70,22 @@
   
 @media (min-width: 320px) and (max-width: 480px) {
 
+    .gw-form {
+        width: 100%;
+    }
+
+    .gw-btn-main {
+        min-width: 98px;
+        max-width: 100px;
+    }
+
+    .gw-text-h1 {
+        font-size: 24px;
+    }
+
+    .gw-text-h2 {
+      font-size: 21px;
+  }
 
 }
 
