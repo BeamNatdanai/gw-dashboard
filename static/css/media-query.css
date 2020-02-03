@@ -30,6 +30,13 @@
   
 @media (min-width: 768px) and (max-width: 1024px) {
 
+    .gw-form {
+        width: 80%;
+    }
+
+    .gw-body-default {
+        height: 100%;
+    }
 
 }
   

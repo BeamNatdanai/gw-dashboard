@@ -2,7 +2,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Router from 'next/router';
 import { Layout, Menu, Icon } from 'antd';
+import sess , { clear , setItem } from '../../lib/session';
 const { SubMenu } = Menu;
 const { Header, Sider, Content } = Layout;
 
@@ -15,7 +17,16 @@ const MyLayout  = (props) => {
     };
 
     const logout = () => {
-        console.log("logout")
+        clear()
+        setItem(sess.name,{
+            _id: null,
+            name: null,
+            username: null,
+            token: null,
+            isAdmin: false
+        })
+        Router.push('/')
+
     }
 
     return (

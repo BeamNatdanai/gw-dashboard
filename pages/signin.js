@@ -6,12 +6,29 @@ import sess , { getItem , setItem } from '../lib/session';
 
 const Signin = (props) => {
 
+    useEffect(()=>{
+        const mySess = getItem(sess.name)
+        if(mySess.isAdmin){
+            Router.push('/')
+        }
+    })
+
     const handleClickSignin = (_event) => {
+        
         const member_username = document.getElementById("member_username").value
         const member_pass = document.getElementById("member_pass").value
         event.preventDefault();
-
-        console.log({member_username,member_pass})
+        const user = {
+            _id: null,
+            name: null,
+            username: member_username,
+            token: null,
+            isAdmin: true
+        }
+        setItem(sess.name,user)
+        setTimeout(()=>{
+            Router.push('/')
+        },1000)
  
     }
 
