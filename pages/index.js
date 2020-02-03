@@ -1,21 +1,25 @@
-import { useState } from 'react'
+import { useState , useEffect  } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout'
 
-const Home = () => {
+const Dashboard = () => {
+
+    useEffect(()=>{
+        
+    })
 
     return (
       <div>
-          <Head>
-              <title>GW | Home</title>
-          </Head>
-          <Layout>
-              Hello World
-          </Layout>
+            <Head>
+                <title>GW | Home</title>
+            </Head>
+            <Layout>
+                Hello World
+            </Layout>
       </div>
     )
 
 }
 
-export default Home
+export default Dashboard

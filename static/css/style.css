@@ -4,15 +4,18 @@
     height: 100vh;
 }
 
+.gw-body-default {
+    background-color: #011429;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
 span {
-    font-family: "Noto Sans Thai";
+    font-family: "Noto Sans Thai Bold";
     font-weight: 900;
 }
 
-span span{
-    font-family: "Noto Sans Thai";
-    font-weight: 900;
-}
 
 /* General */
 
@@ -65,6 +68,7 @@ span span{
     .black {color:#010b13;}
     .black-orgin {color: #000;}
     .black-soft {color:#333333;}
+    .dark-blue {color:#011429;}
 
     .text-shadow-black{
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
@@ -156,16 +160,16 @@ span span{
 
     .gw-text-title-1 {
         margin: 0;
+        font-family: "Noto Sans Thai";
         font-weight: 900;
         font-size: 34px;
-        color:#010b13;
     }
 
     .gw-text-title-2 {
         margin: 0;
+        font-family: "Noto Sans Thai";
         font-weight: 900;
         font-size: 29px;
-        color:#010b13;
     }
 
     .gw-text-defualt {
@@ -177,6 +181,154 @@ span span{
 
 /* Component */
 
+        /* button */
+        .gw-btn-main {
+            margin:0;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 18px;
+            border-radius: 18px;
+            height: 38px;
+            min-width: 110px;
+            max-width: 150px;
+            color: #011429;
+            border: 2px solid #011429;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-main:hover{
+            color: #011429;
+            border: 3px solid #f5f5f5;
+            background: #f5f5f5;
+        }
+    
+        .gw-btn-main-small {
+            margin:0;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 14px;
+            border-radius: 18px;
+            height: 30px;
+            min-width: 80px;
+            max-width: 110px;
+            color: #010b13;
+            border: 2px solid #F4CD5F;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-main-small:hover{
+            color: #ae1501;
+            border: 3px solid #ae1501;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-lg-main {
+            margin:0;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 19px;
+            border-radius: 18px;
+            height: 42px;
+            min-width: 150px;
+            max-width: 180px;
+            color: #011429;
+            border: 2px solid #011429;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-lg-main:hover{
+            color: #011429;
+            border: 3px solid #011429;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-default {
+            margin:0;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 18px;
+            border-radius: 18px;
+            height: 38px;
+            min-width: 110px;
+            max-width: 150px;
+            color: #010b13;
+            border: 2px solid #F4CD5F;
+            background: #F4CD5F;
+        }
+    
+        .gw-btn-default:hover{
+            color: #F4CD5F;
+            border: 3px solid #010b13;
+            background: #010b13;
+        }
+    
+        .gw-btn-play {
+            margin: 2px;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 22px;
+            border-radius: 18px;
+            height: 38px;
+            min-width: 110px;
+            max-width: 150px;
+            color: #ae1501;
+            border: 3px solid #F4CD5F;
+            background: #F4CD5F;
+            text-shadow: 1px 1px 0px #010b13;
+        }
+    
+        .gw-btn-play:hover{
+            color: #F4CD5F;
+            border: 3px solid #010b13;
+            background: #010b13;
+        }
+    
+        .gw-btn-play-block {
+            margin: 2px;
+            font-family: "Noto Sans Thai Bold";
+            font-weight: 900;
+            font-size: 22px;
+            border-radius: 18px;
+            height: 38px;
+            min-width: 100%;
+            color: #ae1501;
+            border: 3px solid #F4CD5F;
+            background: #F4CD5F;
+            text-shadow: 1px 1px 0px #010b13;
+            box-shadow: 1px 5px 21px #333
+        }
+    
+        .gw-btn-play-block:hover{
+            color: #F4CD5F;
+            border: 3px solid #010b13;
+            background: #010b13;
+        }
+
+
+        /* input */
+        .gw-input-middle {
+            font-family: "Noto Sans Thai";
+            font-weight: 900;
+            font-size: 18px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 15px;
+            margin: 4px 0;
+            display: inline-block;
+        }
+
+        .gw-input-block {
+            font-family: "Noto Sans Thai";
+            font-weight: 900;
+            font-size: 14px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 12px;
+            margin: 4px 0;
+            display: inline-block;
+        }
 
 /* End Component */
 
@@ -210,4 +362,19 @@ span span{
     font-size: 21px;
     color:#010b13;
     text-shadow: -1px 0 #F4CD5F, 0 3px #F4CD5F, 0px 0 #F4CD5F, 0 -1px #F4CD5F;
+}
+
+
+/* Form */
+.gw-form {
+    display: inline-block;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    width: 40%;
+    border-radius: 10px;
+    background: #F4CD5F;
+    /* background: #ae1501; */
+    padding: 30px 40px;
 }
