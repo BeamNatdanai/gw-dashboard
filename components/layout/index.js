@@ -29,6 +29,10 @@ const MyLayout  = (props) => {
 
     }
 
+    const onClickMenu = (_params) => {
+        Router.push(_params)
+    } 
+
     return (
         <>
             <Layout className="gw-home">
@@ -39,21 +43,34 @@ const MyLayout  = (props) => {
                         : 
                             <p className="gw-logo"> GW Dashboard </p>
                         )}
-                        
                     </div>
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                        <Menu.Item key="dashboard">
+                        {/* <Menu.Item key="dashboard" onClick={()=>{onClickMenu('/')}}>
                             <Icon type="dashboard" />
                             <span>ส่วนควบคุม</span>
-                        </Menu.Item>
-                        <Menu.Item key="config">
+                        </Menu.Item> */}
+                        {/* <Menu.Item key="config" onClick={()=>{onClickMenu('/config')}}>
                             <Icon type="setting" />
                             <span>ตั้งค่าเกมส์</span>
+                        </Menu.Item> */}
+                        <Menu.Item key="config" onClick={()=>{onClickMenu('/config')}}>
+                            <Icon type="user" />
+                            <span>สมาชิก</span>
                         </Menu.Item>
-                        <Menu.Item key="manageClass">
-                            <Icon type="desktop" />
-                            <span>จัดการห้องเล่น</span>
-                        </Menu.Item>
+                        <SubMenu
+                            key="game"
+                            title={
+                                <span>
+                                    <Icon type="desktop" />
+                                    <span>เกมส์</span>
+                                </span>
+                            }
+                        >
+                            <Menu.Item key="game_card" onClick={()=>{onClickMenu('/game_card')}}>
+                                <Icon type="caret-right" />
+                                <span> ไพ่ </span>
+                            </Menu.Item>
+                        </SubMenu>
                         <SubMenu
                             key="report"
                             title={
@@ -63,7 +80,7 @@ const MyLayout  = (props) => {
                                 </span>
                             }
                         >
-                            <Menu.Item key="report_win_lose">
+                            <Menu.Item key="report_win_lose" onClick={()=>{onClickMenu('/report/report_win_lose')}}>
                                 <Icon type="caret-right" />
                                 <span> แพ้ - ชนะ </span>
                             </Menu.Item>
@@ -83,15 +100,7 @@ const MyLayout  = (props) => {
                         onClick={()=>{toggle()}}
                         />
                     </Header>
-                    <Content
-                        style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        background: '#303138',
-                        borderRadius: 5,
-                        minHeight: 280,
-                        }}
-                    >
+                    <Content className="gw-content-secction">
                         {props.children}
                     </Content>
                 </Layout>
@@ -107,6 +116,23 @@ const MyLayout  = (props) => {
                 .ant-menu-dark .ant-menu-item-selected .anticon {
                     color: #000;
                 }
+
+                .gw-content-secction {
+                    margin: 24px 16px;
+                    padding: 24px;
+                    background: #55565e;
+                    border-radius: 5px;
+                    min-height: 100%;
+                }
+
+                @media (min-width: 481px) and (max-width: 767px) {
+
+                    .gw-content-secction {
+                        min-height: 120%;
+                    }
+                
+                }
+
             `}</style>
         </>
     )

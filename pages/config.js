@@ -17,12 +17,12 @@ const Dashboard = () => {
     return (
       <div>
             <Head>
-                <title>GW | Home</title>
+                <title>GW | Config</title>
             </Head>
             <Layout>
                 <div className="row">
                     <div className="col-12">
-                        <p className="gw-text-h4 default under-line-text">ส่วนควบคุม</p>
+                        <p className="gw-text-h4 default under-line-text">ตั้งค่าเกมส์</p>
                     </div>
                 </div>
             </Layout>
