@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 import sess , { getItem , setItem } from '../lib/session';
+import { signIn } from '../api/admin'
 
 const Signin = (props) => {
 
@@ -13,22 +14,34 @@ const Signin = (props) => {
         }
     })
 
-    const handleClickSignin = (_event) => {
-        
+    const handleClickSignin = async (_event) => {
+        event.preventDefault();
         const member_username = document.getElementById("member_username").value
         const member_pass = document.getElementById("member_pass").value
-        event.preventDefault();
-        const user = {
-            _id: null,
-            name: null,
-            username: member_username,
-            token: null,
-            isAdmin: true
+
+        const ResSignin = await signIn({
+            admin_id: member_username,
+            admin_pass: member_pass
+        })
+
+        if(ResSignin.status){
+            alert('ยินดีต้อนรับ "'+ResSignin.data.admin.admin_name+'" เข้าสู่ระบบค่ะ')
+
+            const user = {
+                id: ResSignin.data.admin._id,
+                username: ResSignin.data.admin.admin_id,
+                name: ResSignin.data.admin.admin_name,
+                token: ResSignin.data.token,
+                isAdmin: true
+            }
+
+            setItem(sess.name,user)
+            setTimeout(()=>{
+                Router.push('/')
+            },1000)
+        }else{
+            alert('รหัสผ่าน และ ชื่อบัญชีไม่ตรงกัน')
         }
-        setItem(sess.name,user)
-        setTimeout(()=>{
-            Router.push('/')
-        },1000)
  
     }
 

@@ -22,7 +22,7 @@ const Dashboard = () => {
             <Layout>
                 <div className="row">
                     <div className="col-12">
-                        <p className="gw-text-h4 default under-line-text">ตั้งค่าเกมส์</p>
+                        <p className="gw-text-h4 default under-line-text text-shadow-black">สมาชิก</p>
                     </div>
                 </div>
             </Layout>

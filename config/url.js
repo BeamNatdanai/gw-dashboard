@@ -3,4 +3,4 @@ const config = {
   prod: "http://165.22.109.0:80/",
 }
 
-export const BaseUrl = config.prod
+export const BaseUrl = config.dev

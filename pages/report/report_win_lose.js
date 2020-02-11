@@ -22,7 +22,7 @@ const reportWinLose = () => {
             <Layout>
                 <div className="row">
                     <div className="col-12">
-                        <p className="gw-text-h4 default under-line-text">รายงานแพ้ชนะ</p>
+                        <p className="gw-text-h4 default under-line-text text-shadow-black">รายงาน แพ้-ชนะ</p>
                     </div>
                 </div>
             </Layout>

@@ -66,7 +66,7 @@ const MyLayout  = (props) => {
                                 </span>
                             }
                         >
-                            <Menu.Item key="game_card" onClick={()=>{onClickMenu('/game_card')}}>
+                            <Menu.Item key="game_card" onClick={()=>{onClickMenu('/game/card/card_manage')}}>
                                 <Icon type="caret-right" />
                                 <span> ไพ่ </span>
                             </Menu.Item>
