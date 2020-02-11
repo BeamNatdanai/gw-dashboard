@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 import Layout from '../../../components/layout';
-import { getClass } from '../../../api/games/card';
+import { getClass , updateClass } from '../../../api/games/card';
 import sess , { getItem , setItem } from '../../../lib/session';
 import { Table, Button, Icon } from 'antd';
 
@@ -59,8 +59,18 @@ const columns = [
       render:(text,data)=>{
         return  (
                   <div>
-                    <Link href={`/game/card/card_monitor?class=${data._id}`}><a><Button type="primary" shape="circle" icon="fund" size="large" /></a></Link>&nbsp;&nbsp;
-                    <Link href={`/game/card/card_update_class?class=${data._id}`}><a><Button shape="circle" icon="edit" size="large" /></a></Link>
+                    <Link href={`/game/card/card_monitor?class=${data._id}`}><a><Button type="primary" shape="circle" icon="fund" size="default" /></a></Link>&nbsp;
+                    <Link href={`/game/card/card_update_class?class=${data._id}`}><a><Button shape="circle" icon="edit" size="default" /></a></Link>&nbsp;
+                    <Button type="danger" shape="circle" icon="delete" size="default" onClick={ async ()=>{ 
+                        const res = await updateClass(data._id,{class_is_del:true})
+                        if(res.status){
+                            alert("ลบข้อมูลเสร็จสิ้นค่ะ")
+                            Router.push(Router.asPath)
+                        }else{
+                            alert("ลบข้อมูล ผิดพลาดค่ะ กรุณาลองใหม่")
+                            Router.push(Router.asPath)
+                        }
+                    }} />
                   </div>
           ) 
       }

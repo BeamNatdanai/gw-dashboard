@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import { BaseUrl } from '../../config/url';
 import { apiKey } from '../../config/key';
 
-export const getClass = async ( ) => {
+export const getClass = async () => {
 
     try {
 
@@ -105,3 +105,4 @@ export const updateClass = async ( _id, obj ) => {
     }
         
 }
+      
