@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 import Layout from '../../../components/layout';
-import { addClass , getClass } from '../../../api/games/card'
+import { addClass , getClass } from '../../../api/games/card';
 import { Form,  Input, Button, InputNumber, Icon, Switch } from 'antd';
 
 const AddClass = (props) => {

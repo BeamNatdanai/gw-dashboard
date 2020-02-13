@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 import sess , { getItem , setItem } from '../lib/session';
-import { signIn } from '../api/admin'
+import { signIn } from '../api/admin';
 
 const Signin = (props) => {
 
@@ -65,7 +65,7 @@ const Signin = (props) => {
                             <div className="gw-form">
                                 <form onSubmit={handleClickSignin}>
                                     <input id="member_username" className="gw-input-middle" placeholder="ชื่อบัญชี" maxLength="16" type="text" pattern="[[A-Za-z0-9]+" title="กรอกเฉพาะภาษาอังกฤษเท่านั้น" required/>
-                                    <input id="member_pass" className="gw-input-middle" placeholder="รหัสผ่าน" maxLength="8" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="ต้องมีอักขระ 8 ตัวขึ้นไป ประกอบด้วย ตัวพิมพ์เล็ก และ ตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว" required/>
+                                    <input id="member_pass" className="gw-input-middle" placeholder="รหัสผ่าน" maxLength="16" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="ต้องมีอักขระ 8 ตัวขึ้นไป ประกอบด้วย ตัวพิมพ์เล็ก และ ตัวพิมพ์ใหญ่อย่างน้อย 1 ตัว" required/>
                                     <br/><br/>
                                     <Link href="/"><button className="gw-btn-main pointer" style={{marginRight:8}} >ยกเลิก</button></Link>
                                     <input className="gw-btn-main pointer" type="submit" value="ยืนยัน" />

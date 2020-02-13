@@ -53,7 +53,7 @@ const MyLayout  = (props) => {
                             <Icon type="setting" />
                             <span>ตั้งค่าเกมส์</span>
                         </Menu.Item> */}
-                        <Menu.Item key="config" onClick={()=>{onClickMenu('/config')}}>
+                        <Menu.Item key="config" onClick={()=>{onClickMenu('/users')}}>
                             <Icon type="user" />
                             <span>สมาชิก</span>
                         </Menu.Item>
@@ -66,7 +66,7 @@ const MyLayout  = (props) => {
                                 </span>
                             }
                         >
-                            <Menu.Item key="game_card" onClick={()=>{onClickMenu('/game/card/card_manage')}}>
+                            <Menu.Item key="game_card" onClick={()=>{onClickMenu('/game/card')}}>
                                 <Icon type="caret-right" />
                                 <span> ไพ่ </span>
                             </Menu.Item>
