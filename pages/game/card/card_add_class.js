@@ -16,7 +16,7 @@ const AddClass = (props) => {
                const res = await addClass(values)
                if(res.status){
                     alert("สร้างห้องเสร็จสิ้น")
-                    Router.push('/game/card/card_manage')
+                    Router.push('/game/card')
                }else{
                     alert("สร้างห้องไม่สำเร็จ !! กรุณาลองใหม่อีกครั้งค่ะ")
                     Router.push('/game/card/card_add_class')

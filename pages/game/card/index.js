@@ -123,47 +123,38 @@ const Dashboard = ({classes}) => {
 
               </Layout>
               <style global jsx>{`
-
                   .gw-btn-add-class {
                       float:right;
                   }
-
                   .ant-table-column-title {
                       font-family: "Noto Sans Thai Bold";
                       text-shadow: -1px 0 #F4CD5F, 0 1px #F4CD5F, 1px 0 #F4CD5F, 0 -1px #F4CD5F;
                       color #000;
                   }
-
                   .gw-text-incolumn {
                       color #000;
                       font-family: "Noto Sans Thai Bold";
                       text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
                   }
-
                   .gw-text-incolumn-primary {
                     color #000;
                     font-family: "Noto Sans Thai Bold";
                     text-shadow: -1px 0 #57aeff, 0 1px #57aeff, 1px 0 #57aeff, 0 -1px #57aeff;
                   }
-
                   .gw-text-incolumn-success {
                     color #000;
                     font-family: "Noto Sans Thai Bold";
                     text-shadow: -1px 0 #93C54B, 0 1px #93C54B, 1px 0 #93C54B, 0 -1px #93C54B;
                   }
-
                   .gw-text-incolumn-danger {
                     color #000;
                     font-family: "Noto Sans Thai Bold";
                     text-shadow: -1px 0 #e33d3d, 0 1px #e33d3d, 1px 0 #e33d3d, 0 -1px #e33d3d;
                   }
-
                   .ant-table-row {
                     cursor: pointer;
                   }
-
                   @media (min-width: 320px) and (max-width: 480px) {
-
                       .gw-btn-add-class {
                           margin-top: 0;
                           margin-bottom: 0rem;
@@ -173,7 +164,6 @@ const Dashboard = ({classes}) => {
                       }
                   
                   }
-
               `}</style>
         </div>
     )

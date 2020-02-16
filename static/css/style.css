@@ -78,6 +78,10 @@ span {
         text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
     }
 
+    .text-shadow-gold{
+        text-shadow: -1px 0 #F4CD5F, 0 1px #F4CD5F, 1px 0 #F4CD5F, 0 -1px #F4CD5F;
+    }
+
     .under-line-text {
         /* display: block; */
         /* border-bottom: 2px solid #ae1501; */
