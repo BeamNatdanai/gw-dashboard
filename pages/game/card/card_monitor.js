@@ -42,9 +42,9 @@ const dataSource = [
       age: 42,
       address: '10 Downing Street',
     },
-  ];
+];
 
-  const columns = [
+const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
@@ -60,12 +60,15 @@ const dataSource = [
       dataIndex: 'address',
       key: 'address',
     },
-  ];
+];
 
-const Monitor = ({classes}) => {
+const Monitor = ({classes, rounds, query}) => {
 
+    const [round, setRounds] = useState(rounds);
     const [cluck, setCluck] = useState(moment().format('YYYY-MM-DD HH:mm:ss'));
     const [tab, setTab] = useState(tabList);
+    const [btnNewRound, setBtnNewRound] = useState((round.length === 0? false : true ));
+    const [refresh, setRefresh] = useState(false);
     
     useEffect(()=>{
         setInterval(()=>{ setCluck(moment().format('YYYY-MM-DD HH:mm:ss'))  }, 1000);
@@ -80,7 +83,8 @@ const Monitor = ({classes}) => {
 
         if(res.status){
             alert("เพิ่มรอบเรียบร้อย")
-            const resRounds = await getRound()
+            const resRounds = await getRoundByClassId(query.class)
+            console.log({resRounds})
             setRounds(resRounds.data.data)
         }else{
             alert("เกิดข้อผิดพลาดในการ เพิ่มรอบ กรุณาลองใหม่")
@@ -89,7 +93,7 @@ const Monitor = ({classes}) => {
     }
 
     const handleClickLoading = async () => {
-        const resRounds = await getRound()
+        const resRounds = await getRoundByClassId(query.class)
         setRounds(resRounds.data.data)
     }
 
@@ -98,7 +102,7 @@ const Monitor = ({classes}) => {
     }
 
     return (
-
+        
         <div>
             <Head>
                 <title>GW | Management</title>
@@ -118,38 +122,40 @@ const Monitor = ({classes}) => {
                         <p className="gw-text-h5 default text-shadow-black">เวลาปัจจุบัน : <span className="black text-shadow-gold">{cluck}</span> </p><br/>
                     </div>
                     <div className="col-12">
-                    <Button onClick={()=>{handleClickAddRound()}} className="gw-btn-add-class pull-right">เปิดรอบใหม่</Button>
-                    <Button onClick={()=>{handleClickLoading()}} icon="reload" type="primary" size="default" style={{marginLeft:5,marginRight:5}} className="pull-right" />
+                    <Button disabled={btnNewRound} onClick={()=>{handleClickAddRound()}} className="gw-btn-add-class pull-right">เปิดรอบใหม่</Button>
+                    <Button disabled={refresh} onClick={()=>{handleClickLoading()}} icon="reload" type="primary" size="default" style={{marginLeft:5,marginRight:5}} className="pull-right" />
                     </div>
                 </div><br/>
 
                 <div className="row">
                     <div className="col-12">
-                        <Card
-                            style={{ width: '100%' }}
-                            title={
-                                <div className="row">
-                                    <div className="col-12 col-sm-6 col-md-6 col-lg-6">
-                                        <p className="gw-text-h5  "> {`รหัสรอบ : ${classes._id} `} </p>
-                                        <p className="gw-text-h5  "> {`สถานะ : ออฟไลน์ `} </p>
+                        {round.length === 0 ? null : 
+                            <Card
+                                style={{ width: '100%' }}
+                                title={
+                                    <div className="row">
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-6">
+                                            <p className="gw-text-h5  "> {`รหัสรอบ : ${round._id} `} </p>
+                                            <p className="gw-text-h5  "> {`สถานะ : ${(round.round_is_open? 'ออฟไลน์' : 'ออนไลน์')} `} </p>
+                                        </div>
+                                        <div className="col-12 col-sm-6 col-md-6 col-lg-6">
+                                            <Button type="primary" onClick={()=>{}} className="gw-btn-add-class pull-right">ออนไลน์</Button>
+                                        </div>
+                                        <div className="col-12">
+                                            <br/><br/>
+                                            <Table dataSource={dataSource} columns={columns} size="small" />
+                                        </div>
                                     </div>
-                                    <div className="col-12 col-sm-6 col-md-6 col-lg-6">
-                                        <Button type="primary" onClick={()=>{}} className="gw-btn-add-class pull-right">ออนไลน์</Button>
-                                    </div>
-                                    <div className="col-12">
-                                        <br/>
-                                        <Table dataSource={dataSource} columns={columns} size="small" />
-                                    </div>
-                                </div>
-                            }
-                            tabList={tabList}
-                            activeTabKey={tab.key}
-                            onTabChange={key => {
-                                onTabChange(key, 'key');
-                            }}
-                            >
-                            {contentList[tab.key]}
-                        </Card>
+                                }
+                                tabList={tabList}
+                                activeTabKey={tab.key}
+                                onTabChange={key => {
+                                    onTabChange(key, 'key');
+                                }}
+                                >
+                                {contentList[tab.key]}
+                            </Card>
+                        }
                     </div>
                 </div>
                 <br/>
@@ -183,13 +189,12 @@ const Monitor = ({classes}) => {
 
 Monitor.getInitialProps = async ({ query }) => {
     const result = await getClassById(query.class)
-
+    const rounds = await getRoundByClassId(query.class)
+    
     return {
         classes: result.data.data[0],
-        // rounds: rounds.data.data.filter((row,index) => {
-        //     row.key = index;
-        //     return row;
-        // })
+        rounds: rounds.data.data,
+        query: query
     }
 }
   
