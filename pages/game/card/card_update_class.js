@@ -24,7 +24,7 @@ const WrappedFormUpdate = Form.create({ name: 'card_ipdate_class' })( (props) =>
                 const res = await updateClass(props.class._id,values)
                 if(res.status){
                         alert("แก้ไขห้องเสร็จสิ้น")
-                        Router.push('/game/card/card_manage')
+                        Router.push('/game/card/')
                 }else{
                         alert("แก้ไขห้องไม่สำเร็จ !! กรุณาลองใหม่อีกครั้งค่ะ")
                         Router.push(Router.asPath)

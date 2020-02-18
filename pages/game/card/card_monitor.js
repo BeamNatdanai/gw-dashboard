@@ -5,15 +5,12 @@ import Router from 'next/router';
 import Layout from '../../../components/layout';
 import { Table, Button, Icon, Card } from 'antd';
 import { getClassById } from '../../../api/games/card';
-import { getRoundByClassId , addRound , updateRound } from '../../../api/games/round';
+import { getRoundByClassId , addRound , updateRound, roundUpdateRoundOpen } from '../../../api/games/round';
+import RoundConclusion from '../../../components/roundConclusion';
 import { numberWithCommas } from '../../../lib/func'
 import * as moment from 'moment';
 
 const tabList = [
-    {
-      key: 'dashboard',
-      tab: 'ส่วนควบคุม',
-    },
     {
         key: 'trade_limit',
         tab: 'การอั้น',
@@ -23,11 +20,6 @@ const tabList = [
       tab: 'สรุปผล',
     }
 ];
-
-const contentList = {
-    players: <p>content1</p>,
-    tab2: <p>content2</p>,
-};
 
 const dataSource = [
     {
@@ -62,11 +54,24 @@ const columns = [
     },
 ];
 
+const ContentList = (props) => {
+ 
+    return (
+        <div>
+            {(props.subPage === "conclusion"? 
+                <RoundConclusion ka={props.ka} />
+            : 
+                <p>trade_limit</p>
+            )}
+        </div>
+    )
+}
+
 const Monitor = ({classes, rounds, query}) => {
 
     const [round, setRounds] = useState(rounds);
     const [cluck, setCluck] = useState(moment().format('YYYY-MM-DD HH:mm:ss'));
-    const [tab, setTab] = useState(tabList);
+    const [tab, setTab] = useState(tabList[0]);
     const [btnNewRound, setBtnNewRound] = useState((round.length === 0? false : true ));
     const [refresh, setRefresh] = useState(false);
     
@@ -84,7 +89,6 @@ const Monitor = ({classes, rounds, query}) => {
         if(res.status){
             alert("เพิ่มรอบเรียบร้อย")
             const resRounds = await getRoundByClassId(query.class)
-            console.log({resRounds})
             setRounds(resRounds.data.data)
         }else{
             alert("เกิดข้อผิดพลาดในการ เพิ่มรอบ กรุณาลองใหม่")
@@ -101,6 +105,18 @@ const Monitor = ({classes, rounds, query}) => {
         setTab({ [key]: type });
     }
 
+    const handleClickToggle = async (_id,value) => {
+
+        const res = await roundUpdateRoundOpen(_id,{round_is_open:!value})
+        if(res.status){
+            alert("เปิดรับ เรียบร้อย")
+            setRounds(res.data.data)
+        }else{
+            alert("เกิดปัญหาในการเปิดรับ กรุณาลองใหม่")
+            Router.push(Router.asPath)
+        }
+    }
+    
     return (
         
         <div>
@@ -131,15 +147,16 @@ const Monitor = ({classes, rounds, query}) => {
                     <div className="col-12">
                         {round.length === 0 ? null : 
                             <Card
+                                loading={false}
                                 style={{ width: '100%' }}
                                 title={
                                     <div className="row">
                                         <div className="col-12 col-sm-6 col-md-6 col-lg-6">
                                             <p className="gw-text-h5  "> {`รหัสรอบ : ${round._id} `} </p>
-                                            <p className="gw-text-h5  "> {`สถานะ : ${(round.round_is_open? 'ออฟไลน์' : 'ออนไลน์')} `} </p>
+                                            <p className="gw-text-h5  "> {`สถานะ : ${(round.round_is_open === true? 'เปิดรับ' : 'ปิดรับ')} `} </p>
                                         </div>
                                         <div className="col-12 col-sm-6 col-md-6 col-lg-6">
-                                            <Button type="primary" onClick={()=>{}} className="gw-btn-add-class pull-right">ออนไลน์</Button>
+                                            <Button type="primary" onClick={()=>{ handleClickToggle(round._id,round.round_is_open) }} className="gw-btn-add-class pull-right">{(round.round_is_open === true? 'ปิดรับ' : 'เปิดรับ')}</Button>
                                         </div>
                                         <div className="col-12">
                                             <br/><br/>
@@ -153,7 +170,7 @@ const Monitor = ({classes, rounds, query}) => {
                                     onTabChange(key, 'key');
                                 }}
                                 >
-                                {contentList[tab.key]}
+                                <ContentList subPage={tab.key} ka={classes.class_trade_unit} />
                             </Card>
                         }
                     </div>

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3009",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start"
   },
@@ -14,6 +14,7 @@
     "moment": "^2.24.0",
     "next": "9.2.1",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "socket.io": "^2.3.0"
   }
 }
