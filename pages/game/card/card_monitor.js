@@ -59,7 +59,7 @@ const ContentList = (props) => {
     return (
         <div>
             {(props.subPage === "conclusion"? 
-                <RoundConclusion ka={props.ka} />
+                <RoundConclusion ka={props.ka} round={props.round} />
             : 
                 <p>trade_limit</p>
             )}
@@ -170,7 +170,7 @@ const Monitor = ({classes, rounds, query}) => {
                                     onTabChange(key, 'key');
                                 }}
                                 >
-                                <ContentList subPage={tab.key} ka={classes.class_trade_unit} />
+                                <ContentList subPage={tab.key} ka={classes.class_trade_unit} round={rounds} />
                             </Card>
                         }
                     </div>
