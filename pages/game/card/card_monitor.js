@@ -7,6 +7,7 @@ import { Table, Button, Icon, Card } from 'antd';
 import { getClassById } from '../../../api/games/card';
 import { getRoundByClassId , addRound , updateRound, roundUpdateRoundOpen } from '../../../api/games/round';
 import RoundConclusion from '../../../components/roundConclusion';
+import RoundTrandLimit from '../../../components/roundTradeLimit';
 import { numberWithCommas } from '../../../lib/func'
 import * as moment from 'moment';
 
@@ -55,13 +56,13 @@ const columns = [
 ];
 
 const ContentList = (props) => {
- 
+
     return (
         <div>
             {(props.subPage === "conclusion"? 
                 <RoundConclusion ka={props.ka} round={props.round} />
-            : 
-                <p>trade_limit</p>
+            :
+                <RoundTrandLimit ka={props.ka} round={props.round} />
             )}
         </div>
     )

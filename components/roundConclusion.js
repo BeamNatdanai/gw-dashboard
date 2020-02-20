@@ -1,6 +1,6 @@
 import { useState , useEffect  } from 'react';
 import { Form,  Input, Button, InputNumber, Icon, Switch } from 'antd';
-import { roundUpdateConclusion } from '../api/games/round'
+import { roundUpdateConclusion } from '../api/games/round';
 
 const generateArray = (number) => {
     let newArr = [] 
@@ -48,7 +48,7 @@ const RoundConclusion = (props) => {
 
     const onChangeDataForm = (mainkey,index,key,value) => {
         let _form = form;
-        _form[mainkey][index][key] = value
+        _form[mainkey][index][key] = value;
         setForm(_form)
     }
     

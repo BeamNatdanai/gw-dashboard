@@ -211,3 +211,30 @@ export const roundUpdatePlayTransaction = async ( _id, obj ) => {
     }
         
 }
+
+export const roundUpdateTradelimit = async ( _id, obj ) => {
+
+    try {
+
+        const response = await fetch(BaseUrl+'rounds/'+_id+'/trade_limit', {
+            method: 'PATCH',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': apiKey
+            },
+            body: JSON.stringify(obj)
+          })
+        const json = await response.json()
+        if(json.status){
+            return await { status:true , data:json }
+        }else{
+            return await { status:false , data:json }
+        }
+
+    } catch(err) {
+        // catches errors both in fetch and response.json
+        return await { status:false , data:err }
+    }
+        
+}
